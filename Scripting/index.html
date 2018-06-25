@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Scripting Shell</h1>
+					<h3>Jour 1 - Introduction à l'algorithmique simplifié</h3>
+					<p>
+					<small>Par <a href="mailto:erwan.legall@librit.fr">Erwan Le Gall</a> / <a href="http://www.librit.fr">LibrIT</a></small>
+					</p>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+                    <section data-background="#FFFFFF">
+						<h2>LibrIT</h2>
+						<p>Fondée en 2011</p>
+						<p>Editeur de la solution PaSSHport</p>
+						<p>
+							<a href="http://www.librit.fr" target="_blank">
+								<img data-src="./medias/images/librit-logo.jpg" alt="LibrIT logo">
+							</a>
+						</p>
+						<br>
+					</section>
+				</section>
+
+				<section>
+						<h2>Votre hôte</h2>
+						<h4><p>Architecte en logiciel Libre</p></h4>
+						<p>Généraliste - nouvellement architecte développeur</p>
+						<p>Plus de 10 ans d'expérience</p>
+						<p>Diverses missions et postes dans des structures et administrations de toutes tailles</p>
+				</section>
+
+				<section>
+					<section>
+						<h2>L'algorithmique</h2>
+						<h4><p>Principe</p></h4>
+						<p class="fragment">Exprimer en language humain une résolution de problème</p>
+						<h4><p>Exemple</p></h4>
+						<p class="fragment">Calculer !10 (= 10 x 9 x 8 x 7 ... x 1)</p>
+                        <p class="fragment">On calcule 10 x 9 et on se souvient du résultat</p>
+                        <p class="fragment">On calcule le résultat x 8...</p>
+					</section>
+					<section>
+						<h2>Intérêt ?</h2>
+						<h4><p>Un fonctionnement logique</p></h4>
+						<p class="fragment"></p>
+						<p class="fragment">Compréhensible par tous</p>
+						<p class="fragment">Permet une approche rapide de résolution de problèmes</p>
+						<p class="fragment">Parfois réalisée directement en laguage machine (code)<p>
+					</section>
+					<section>
+						<h2>Types d'algorithmes</h2>
+						<h4><p>Itératif</p></h4>
+						<p class="fragment">Raisonnement "pas à pas" </p>
+                        <p class="fragment">Classique, simple à comprendre et à développer</p>
+                        <h4><p>Récursif</p></h4>
+						<p class="fragment">Résonnements par récursivité / induction</p>
+						<p class="fragment">Moins évident pour la plupart des problèmes. Souvent plus efficace.</p>
+					</section>						
+				</section>
+                
+				<section>
+                    <section>
+                        <h2>Outil : les variables</h2>
+                        <h4>Exercice</h4>
+                        <p>Ecrire un algorithme qui calcule la somme de 3 nombres</p>
+                        <p>Contrainte : l'addition ne peut se faire qu'entre 2 nombres</p>
+                    </section>
+                </section>
+				<section data-background="#EEEEEE">
+					<section>
+						<h2>Quelques types de variables</h2>
+						<p class="fragment">String : Chaine de caractère</p>
+						<p class="fragment">Integer: Entier (nombre)</p>
+						<p class="fragment">Float/double/... : nombres plus grand ou à virgule</p>
+                        <p class="fragment">Boolean : Vrai/faux</p>
+                        <p class="fragment">Table/dictionnary/hash... : Structures de données</p>
+					</section>
+					<section>
+						<h2>Les languages non "typés"</h2>
+						<p class="fragment">Simplifie l'écriture</p>
+						<p class="fragment">Complexifie la compréhension</p>
+						<p class="fragment">Entraîne parfois des effets de bord</p>
+					</section>
+					<section>
+						<h2>Les contextes d'utilisation d'une variable</h2>
+						<p class="fragment">Variable globale</p>
+                        <p class="fragment">Variable locale</p>
+   						<h2>La variable à connaître</h2>
+                        <p class="fragment">i, un compteur (puis j, k)</p>
+					</section>
+				</section>
+                
+                <section>
+                    <section>
+                        <h2>Outil : les conditions</h2>
+                        <h4>Exercice</h4>
+                        <p>Ecrire un algorithme qui calcule la somme de 3 nombres</p>
+                        <p>Contrainte : l'addition ne peut se faire que si les nombres son inférieurs à 100</p>
+                    </section> 
+                </section> 
+				<section data-background="#EEEEEE">
+					<section>
+						<h2>Quelques conditions</h2>
+						<p class="fragment"> = </p>
+						<p class="fragment"> < ou > </p>
+						<p class="fragment"> <= ou >= </p>
+                        <p class="fragment"> "Est vrai" (ou "Est faux")</p>
+                        <p class="fragment"> Cette dernière est en réalité la seule</p>
+					</section>
+					<section>
+						<h2>Quelques exmples</h2>
+						<p class="fragment">Tests entre nombres</p>
+						<p class="fragment">Existence de fichier ou de variable</p>
+						<p class="fragment">En shell : man test</p>
+					</section>
+				</section>  
+                
+                
+                
+                
+                
+                <section>
+                    <h2>Outil : les boucles</h2>
+					<h4>Exercice</h4>
+					<p>Ecrire un algorithme qui calcule la somme de X nombres</p>
+                    <p>Contrainte : X est inconnu avant le lancement de l'algorithme</p>
+				</section> 
+				<section data-background="#EEEEEE">
+					<section>
+						<h2>Les boucles</h2>
+						<p class="fragment"> Pour </p>
+						<p class="fragment"> Tant que [Condition] </p>
+						<p class="fragment"> Répéter jusqu'à [Condition]</p>
+					</section>
+					<section>
+						<h2>TP 1</h2>
+						<p>Ecrire un algorithme prenant un nombre en entrée</p>
+                        <p>l'algorithme doit retourner le nombre de fibonacci associé</p>
+                        <p>Pour information F(n+2) = F(n) + Fn(+1)</p>
+                        <p class="fragment"> F(0) = 0 (par définition) </p>
+                        <p class="fragment"> F(1) = 1 (par définition)</p>
+                        <p class="fragment"> F(2) = 1 </p>
+                        <p class="fragment"> F(3) = 2 </p>
+                        <p class="fragment"> F(4) = 3 </p>
+					</section>
+				</section>                    
+                
+                
+                <section>
+                    <h2>Outil : les fonctions</h2>
+					<h4>Exercice</h4>
+					<p>Ecrire un algorithme qui permet de calculer le nombre de fibonacci sur 3 nombres</p>
+				</section> 
+				<section data-background="#EEEEEE">
+					<section>
+						<h2>Principe d'une fonction</h2>
+                        <p class="fragment">Est appelée avec des "paramètres"</p>
+                        <p class="fragment">A son propre contexte (cf variables globales et locales)</p>
+                        <p class="fragment">Peut, ou non, retourner un résultat</p>
+						<p class="fragment">Permet d'organiser son algorithme</p>
+						<p class="fragment">Évite des erreurs dûes aux répétitions</p>
+						<p class="fragment">Facilite la relecture</p>
+					</section>
+					<section>
+						<h2>TP 2</h2>
+						<p>Ecrire un algorithme demandant à utilisateur d'entrer 3 nombres</p>
+                        <p>l'algorithme doit retourner le nombre de fibonacci associé au premier nombre</p>
+                        <p>Pour information F(n+2) = F(n) + Fn(+1)</p>
+                        <p class="fragment"> F(0) = x (défini par l'utilisateur) </p>
+                        <p class="fragment"> F(1) = y (défini par l'utilisateur)</p>
+					</section>
+				</section>           
+                
+                <section>
+                    <h2>La règle : tester son algorithme</h2>
+					<p class="fragment">- Se mettre dans le contexte</p>
+                    <p class="fragment">- Tester avec des valeurs crédibles</p>
+                    <p class="fragment">- Réaliser plusieurs tests</p>
+					</section>
+					<section>
+						<h2>Tests aux limites</h2>
+						<p>Toujours tester les limites : </p>
+                        <p class="fragment">Division par 0 </p>
+                        <p class="fragment">Variable vide / erreur de saisie</p>
+                        <p class="fragment">... les limites</p>
+					</section>
+                    <section>
+						<h2>TP 3</h2>
+						<p>Renforcer l'algorithme du TP2 avec les tests aux limites</p>
+					</section>
+				</section>          
+                
+				<section style="text-align: left;">
+					<h1>Aller plus loin...</h1>
+                    <p> Structures de données, </p>
+                    <p> organiser son algorithme, </p>
+                    <p> optimiser son algorithme </p>
+                    <br>
+					<p>
+						<a href="https://github.com/hakimel/reveal.js">Slides fait avec reveal.js</a>
+						</p>
+						<p>licence : CC BY-SA 3.0</p>
+
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
