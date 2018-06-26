@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Scripting Shell</h1>
+					<h3>Jour 2 - Prise en main du shell Bash</h3>
+					<p>
+					<small>Par <a href="mailto:erwan.legall@librit.fr">Erwan Le Gall</a> / <a href="http://www.librit.fr">LibrIT</a></small>
+					</p>
+				</section>
+
+
+				<section>
+					<section>
+						<h2>L'interpreteur</h2>
+						<h4><p>Shell ?</p></h4>
+						<p class="fragment">Interface avec le noyau (Linux dans notre cas)</p>
+						<p class="fragment">sh, bash, ksh, zsh...</p>
+                        <p class="fragment">Bash est l'interpreteur retenu pour Linux</p>
+                        <p class="fragment">Le Shell et le Terminal sont deux choses différentes</p>
+                      
+					</section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Rappel sur quelques commandes</h1>
+                    </section>
+                    <section>
+                        <h4>Se déplacer et observer une arborescence</h4>
+                        <p class="fragment">cd : changer de répertoire</p>
+                        <p class="fragment">ls : lister le contenu d'un répertoire</p>
+                        <p class="fragment">find: rechercher dans un répertoire</p>
+                        <p class="fragment">locate/updatedb : rechercher sur l'ensemble du système</p>
+                        <p class="fragment">du : observer la taille d'un fichier / d'un répertoire (-sh)</p>
+                        <p class="fragment">df : observer l'espace disque utilisé sur un système de fichier</p>
+                    </section>
+					<section>
+						<h4>Manipulations de fichiers</h4>
+                        <p class="fragment">mkdir : créer un répertoire vide</p>
+						<p class="fragment">touch : modifier la date du dernier accès à un fichier<br>souvent utilisé pour créer un fichier vide</p>
+                        <p class="fragment">cp : copier un fichier ou un répertoire (-r)</p>
+                        <p class="fragment">mv : déplacer un fichier ou un répertoire</p>
+                        <p class="fragment">rm : supprimer un fichier ou un répertoire (-r)</p>
+                        <p class="fragment">rmdir : supprimer un répertoire vide</p>
+                        <p class="fragment">ln : créer un lien (éventuellement symbolique -s)</p>
+                        <p class="fragment">chmod : changer les droits sur un fichier</p>
+                        <p class="fragment">chown : changer le propriétaire d'un fichier</p>
+                    </section>
+					<section>
+						<h4>Les éditeurs / lecteurs</h4>
+                        <p class="fragment">vim / vi : éditeur avancé en mode texte</p>
+						<p class="fragment">nano : éditeur simple en mode texte</p>
+                        <p class="fragment">more : affichage d'un fichier texte page par page</p>
+                        <p class="fragment">less : affichage avancé d'un fichier texte</p>
+					</section>
+					<section>
+						<h4>Gestion des processus et des informations machines</h4>
+                        <p class="fragment">ps : liste des processus en cours d'execustion(ps -aux)</p>
+						<p class="fragment">top : affichage avancé de la liste des processus et infos</p>
+                        <p class="fragment">htop : affichage très avancé de la liste des processus et infos</p>
+                        <p class="fragment">uptime : affichage de la durée écoulé depuis le démarrage et de la charge</p>
+                        <p class="fragment">date : affiche la date (+%Y%m%d par exemple)</p>
+                        <p class="fragment">time : affiche la durée de l'éxécution d'une commande</p>
+					</section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Les entrées et sorties<h1>
+                    </section>
+					<section>
+						<h4>Définitions</h4>
+                        <p class="fragment">entrée standard : entrée utilisée par les commandes pour obtenir des données<br>Défaut : clavier.</p>
+						<p class="fragment">sortie standard : sortie utilisée par les commandes pour afficher un résultat<br>Défaut : le terminal(l'écran).</p>
+						<p class="fragment">sortie d'erreur : sortie utilisée par les commandes pour afficher les erreurs<br>Défaut : le terminal (l'écran)</p>
+					</section>
+					<section>
+						<h4>Les redirections</h4>
+                        <p class="fragment">> : redirection de la sortie standard vers un fichier (écrase le fichier)<p>
+						<p class="fragment">>> : redirection de la sortie standard vers la fin d'un fichier (ajoute)</p>
+                        <p class="fragment">2> : redirection de la sortie d'erreur vers un fichier</p>
+                        <p class="fragment">&> : redirection de la sortie d'erreur et de la sortie standard vers un fichier</p>
+                        <p class="fragment">< : redirection de l'entrée standard</p>
+                        <p class="fragment">| : redirection de la sortie standard d'une commande vers l'entrée standard d'une autre commande</p>
+					</section>
+				</section>
+                
+				<section data-background="#EEEEEE">
+                    <section>
+                        <h1>Script Shell</h1>
+                    </section>
+					<section>
+						<h2>Définition</h2>
+						<p class="fragment">Suite de commandes dans un fichier texte</p>
+						<p class="fragment">Peux contenir des structures conditionelles</p>
+                        <p class="fragment">Peux contenir des variables</p>
+                        <p class="fragment">Peux contenir des boucles</p>
+                        <p class="fragment">Chaque ligne débutant par un "#" est un commentaire (non exécuté)</p>
+                        <p class="fragment">La première ligne est une exception, elle commence par #:<br>#!/bin/bash</p>
+                        <p class="fragment">TP 1 : écrire un script qui créer un répertoire "monrep" et un fichier "monrep/monfic"</p>
+					</section>
+					<section>
+						<h2>Quelques règles utiles</h2>
+						<p class="fragment">Indenter son code (cf algorithmique)</p>
+						<p class="fragment">Commenter les blocs de code (ne jamais hésiter à commenter)</p>
+						<p class="fragment">Utiliser des noms de fonctions et variables compréhensibles (pas de a, b, c)</p>
+					</section>
+					<section>
+						<h2>Les paramètres d'un script</h2>
+						<p class="fragment">./monscript.sh param1 param2</p>
+                        <p class="fragment">$0 == "./monscript.sh"</p>
+   						<p class="fragment">$1 == "param1"</p>
+   						<p class="fragment">$2 == "param2"</p>
+   						<p class="fragment">$@ == "param1 param2"</p>
+                        <p class="fragment">-</p>
+   						<p class="fragment">TP 2 : reprendre le script du TP 1 et changer monrep et monfic par des paramètres à passer au script</p>   						
+					</section>
+				</section>
+                
+				<section>
+                    <section>
+                        <h1>Syntaxe</h1>
+                    </section>
+					<section>
+						<h2>variable et boucles</h2>
+						<p class="fragment">Les variables ne sont pas typées (chaînes de caractères)</p>
+						<p class="fragment">Test conditionel : if [ montest ]; then ...; fi</p>
+                        <p class="fragment">Boucle pour : for i in {1 .. 10}; do echo $i; done</p>
+                        <p class="fragment">Boucle tant que : while read line; do echo $line; done < monfic.txt</p>
+					</section>
+					<section>
+						<h2>TP 3</h2>
+						<p class="fragment">Ecrire un script shell qui prend 3 paramètres : un nom de répertoire, un nom de fichier et un nombre</p>
+						<p class="fragment">Inscrire le nom des trois premiers fichiers du répertoire dans le fichier avec une ligne = un nom de fichier</p>
+						<p class="fragment">Afficher le contenu du fichier ligne par ligne</p>
+                        <p class="fragment">Penser à documenter et tester</p>
+					</section>	
+                </section>
+				<section style="text-align: left;">
+					<p>
+                        <a href="https://github.com/hakimel/reveal.js">Slides fait avec reveal.js</a>
+					</p>
+					<p>licence : CC BY-SA 3.0</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
